@@ -1,0 +1,49 @@
+平台商品列表：http://localhost:8080/eduboss
+/web/OnlineProductConditionWebListControllerproductPage.do
+?rows=4&gradeId=7857&category=SMALL_CLASS&subjectId=7886&productName=2015
+返回: 单列
+{"id":"11570","name":"2015冬季一年级语文一对一","gradeName":"一年级","gradeId":"7857","subjectNames":"英语,物理,化学化学化学化学,数学,语文,生物,地理,政治,历史","subjectIds":"7886,7887,7888,7889,7890,7891,7892,7895,7896","price":30.00,"courseHours":20.00,"totalPrice":600.00,"category":"班课"}
+
+平台班课列表：http://localhost:8080/eduboss
+/web/OnlineProductConditionWebListController/miniClassPage.do
+?rows=5&campusId=4210&gradeId=7867&subjectId=7889
+返回: 单列
+{"miniClassId":"7577","name":"2017春季123","campusId":"4210","campusName":"皮包校区","gradeName":"高二","gradeId":"7867","subjectId":"7889","subjectName":"数学","teacherId":null,"teacherName":null,"unitPrice":20.00,"totalClassHours":50.00,"totalPrice":1000.00,"classTime":"01:05"}
+
+在线商品列表
+http://localhost:8080/eduboss
+/web/OnlineProductWebListController/page.do?rows=5&type=0
+
+    /**
+     * 筛选项：
+     * 商品名称，状态，库存，售卖校区，销量，上架时间，下架时间
+     * 其中：状态，售卖校区做多选型下拉框
+     */
+    private String productName;
+
+    private String sellStatuses;
+
+    private String campusIds;
+
+    private String minStorageAmount;
+
+    private String maxStorageAmount;
+
+    private String minSaleAmount;
+
+    private String maxSaleAmount;
+
+    private String startOfSellStartDate;
+
+    private String endOfSellStartDate;
+
+    private String startOfSellEndDate;
+
+    private String endOfSellEndDate;
+
+    private int type; // 0表示普通商品， 1 表示班课
+
+返回： 单列
+  {"id":"1","name":"test_1_wangn","productId":"11710","shownImageUrl":"http://dwz.cn/83k03G"
+  ,"courseHour":"10.00","sellStartDate":"2017-06-01","sellEndDate":"2017-07-01",
+  "mallTotalPrice":"100.00","saleAmount":"0","storageAmount":"80","campusNames":"啊啦啦啦校区,测试校区","promotionIds":""}

@@ -1,0 +1,17 @@
+列表:
+http://localhost:8080/eduboss/web/OnlineOrderListWebController/page.do
+&startCreateTime=2018-06-15
+&endCreateTime=2018-06-15
+&studentName=杰
+&studentContact=1
+&orderPayStatus=PAYING
+&campusId=6403
+
+详情：
+http://localhost:8080/eduboss/web/OnlineOrderListWebController/getSingleOrderDetail.do
+onlineOrderId=1
+
+订单付款状态
+PAYING("PAYING", "付款中"),
+DEAL("DEAL", "已成交"),
+CLOSED("CLOSED", "已关闭"),;

@@ -1,0 +1,76 @@
+多选都用逗号隔开：
+销售状态参数：
+    ON_SELL("ON_SELL", "销售中"),
+    WAIT_SELL("WAIT_SELL", "未上架"),
+    OFF_SELL("OFF_SELL", "已下架")
+
+
+星期下拉
+        MON("MON", "星期一", 1 << 0),
+        TUES("TUES", "星期二", 1 << 1),
+        WEB("WEB", "星期三", 1 << 2),
+        THUR("THUR", "星期四", 1 << 3),
+        FRI("FRI", "星期五", 1 << 4),
+        SAT("SAT", "星期六", 1 << 5),
+        SUN("SUN", "星期日", 1 << 6),;
+
+课程时间选择： 字典表    ONLINE_COURSE_TIME
+
+优惠下拉框
+http://localhost:8080/eduboss/web/OnlineProductConditionWebListController/getPromotionListByProductId.do?productId=11710
+
+{"resultCode":0,"resultMessage":"操作成功","businessCode":0,"data":[{"id":"682243","name":"直减优惠","institutionId":"1"},{"id":"676384","name":"任意课时","institutionId":"1"},{"id":"676383","name":"任意减免","institutionId":"1"},{"id":"670785","name":"打5折4","institutionId":"1"},{"id":"670777","name":"打8.8折888","institutionId":"1"},{"id":"670775","name":"打1折789","institutionId":"1"},{"id":"670772","name":"打0.5折000","institutionId":"1"},{"id":"21706","name":"减5000元","institutionId":"1"},{"id":"21704","name":"减55元","institutionId":"1"},{"id":"21701","name":"减2元","institutionId":"1"}],"userdata":{}}
+
+
+优惠保存
+http://localhost:8080/eduboss/web/OnlineProductWebController/savePromotions.do
+参数onlineProductId=1&promotionIds=676383
+
+
+下架(批量,隔开)
+http://localhost:8080/eduboss/web/OnlineProductWebControllerputOffShelvesOnlineProduct.do?
+onlineProductIds=1&sellEndDate=2018-06-15
+
+上架(批量,隔开)
+http://localhost:8080/eduboss/web/OnlineProductWebControllerputOnShelvesOnlineProduct.do?
+onlineProductIds=1&sellStartDate=2018-06-15
+
+
+添加
+http://localhost:8080/eduboss/web/OnlineProductWebController/addOnlineProduct.do
+//商品添加
+
+{
+    "id": "", "name":"jsonadd", "productId" : "11544", "miniClassId" : "",
+    "shownImageUrl" : "",
+    "sellStartDate" : "2018-07-01", "sellEndDate": "2018-09-01",
+    "originUnitPrice" : "20.00", "courseHour" : "15.00", "mallTotalPrice": "300.00",
+    "campusDetails" : [{
+    "campusId": "4674",  "onlineProductId" : "",
+    "originUnitPrice" : "18.00", "courseHour" : "15.00", "mallTotalPrice": "270.00",
+    "storageAmount" : "50",
+    "gradeId" : "", "subjectId" : "", "teacherId" : "" , "weeksValues" : "", "courseTimeIds" : ""
+} ]
+}
+
+//班课添加
+{
+    "id": "", "name":"minclasstest", "productId" : "", "miniClassId" : "7663",
+    "shownImageUrl" : "", "type" : 1
+    "originUnitPrice" : "20.00", "courseHour" : "16.00", "mallTotalPrice": "320.00",
+    "campusDetails" : [{
+    "campusId": "4674",  "onlineProductId" : "",
+    "originUnitPrice" : "20.00", "courseHour" : "16.00", "mallTotalPrice": "320.00",
+    "storageAmount" : "50",
+    "gradeId" : "7861", "subjectId" : "7889", "teacherId" : "10557" , "weekValues" : "MON,SUN", "courseTimeIds" : "7861"
+}]
+}
+
+//修改保存
+http://localhost:8080/eduboss/web/OnlineProductWebController/moidfyOnlineProduct.do
+参数同上
+
+//修改时额外参数信息
+http://localhost:8080/eduboss/web/OnlineProductWebListController/getCampusDetailByProductId.do?onlineProductId=
+
+
